@@ -1,19 +1,42 @@
-# React + Vite
+# 🌻 Flores amarillas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pequeña experiencia interactiva hecha con React + Vite, con dos versiones:
 
-Currently, two official plugins are available:
+- `?para=1`: versión de broma.
+- `?para=2`: versión sentimental.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Desarrollo local
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Comprobar antes de subir
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+```bash
+npm run lint
+npm run build
+```
 
-## Expanding the ESLint configuration
+## Publicación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El repositorio ya está configurado con GitHub Pages y GitHub Actions.
+Cada push a `main` ejecuta el workflow de deploy automáticamente.
+
+Sitio:
+
+`https://alanisyourhomie.github.io/flores-amarillas/`
+
+Enlaces directos:
+
+- `https://alanisyourhomie.github.io/flores-amarillas/?para=1`
+- `https://alanisyourhomie.github.io/flores-amarillas/?para=2`
+
+## Personalizar textos
+
+Todos los textos de ambas versiones están en:
+
+`src/data/experiences.js`
+
+No hace falta tocar los componentes para cambiar mensajes.
