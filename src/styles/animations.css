@@ -1,17 +1,65 @@
-@keyframes fade-in {
+@keyframes scene-enter {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(18px) scale(0.985);
+    filter: blur(4px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
-.scene__content {
-  animation: fade-in 600ms ease both;
+@keyframes grow-flower {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(var(--flower-scale)) scaleY(0);
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(var(--flower-scale)) scaleY(1);
+  }
+}
+
+@keyframes flower-sway {
+  from {
+    transform: translateX(-50%) rotate(calc(var(--lean) - 2deg));
+  }
+
+  to {
+    transform: translateX(-50%) rotate(calc(var(--lean) + 2deg));
+  }
+}
+
+@keyframes petal-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0) rotate(0deg);
+  }
+
+  10% {
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: translate3d(38px, 48vh, 0) rotate(240deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-24px, 103vh, 0) rotate(560deg);
+  }
+}
+
+.scene-enter {
+  animation: scene-enter 520ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -22,5 +70,9 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .primary-button--escape {
+    transform: none !important;
   }
 }
